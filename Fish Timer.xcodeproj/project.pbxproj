@@ -16,6 +16,7 @@
 		AE551E0C24EC9ECA006EA151 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE551E0A24EC9ECA006EA151 /* LaunchScreen.storyboard */; };
 		AE551E1724EC9ECB006EA151 /* Fish_TimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE551E1624EC9ECB006EA151 /* Fish_TimerUITests.swift */; };
 		AE551E2224EDE218006EA151 /* timerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE551E2124EDE217006EA151 /* timerModel.swift */; };
+		AE551E2424EF2CB1006EA151 /* FoodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE551E2324EF2CB1006EA151 /* FoodButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		AE551E1624EC9ECB006EA151 /* Fish_TimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish_TimerUITests.swift; sourceTree = "<group>"; };
 		AE551E1824EC9ECB006EA151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE551E2124EDE217006EA151 /* timerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerModel.swift; sourceTree = "<group>"; };
+		AE551E2324EF2CB1006EA151 /* FoodButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				AE551DFE24EC9EC6006EA151 /* SceneDelegate.swift */,
 				AE551E0024EC9EC6006EA151 /* ViewController.swift */,
 				AE551E0224EC9EC6006EA151 /* Main.storyboard */,
+				AE551E2324EF2CB1006EA151 /* FoodButton.swift */,
 				AE551E2124EDE217006EA151 /* timerModel.swift */,
 				AE551E0824EC9ECA006EA151 /* Assets.xcassets */,
 				AE551E0A24EC9ECA006EA151 /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 				AE551E2224EDE218006EA151 /* timerModel.swift in Sources */,
 				AE551DFD24EC9EC6006EA151 /* AppDelegate.swift in Sources */,
 				AE551DFF24EC9EC6006EA151 /* SceneDelegate.swift in Sources */,
+				AE551E2424EF2CB1006EA151 /* FoodButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

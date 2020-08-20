@@ -15,23 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZOX-FB-eK6">
-                                <rect key="frame" x="212" y="266" width="150" height="161.66666666666663"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-EP-fhX" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
+                                <rect key="frame" x="57.333333333333336" y="283" width="112.33333333333331" height="144.66666666666663"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="ryJ-0R-nPj">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="ppK-Ir-40Z">
+                                        <rect key="frame" x="4.6666666666666643" y="0.0" width="103" height="103"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="K65-hM-y8P"/>
-                                            <constraint firstAttribute="height" constant="120" id="tna-Us-WFr"/>
+                                            <constraint firstAttribute="height" constant="103" id="632-Bi-T4R"/>
+                                            <constraint firstAttribute="width" constant="103" id="6O4-Ct-iJI"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trophy Fish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylo-Lz-dN1">
-                                        <rect key="frame" x="6" y="128" width="138.33333333333334" height="33.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-rc-bY0">
+                                        <rect key="frame" x="0.0" y="111" width="112.33333333333333" height="33.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <connections>
+                                    <outlet property="image" destination="ppK-Ir-40Z" id="eWE-ht-Z6W"/>
+                                    <outlet property="label" destination="m8j-rc-bY0" id="SE8-Yw-eRW"/>
+                                </connections>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OV-ec-8Zo">
                                 <rect key="frame" x="131.33333333333337" y="70" width="151.66666666666663" height="67"/>
@@ -39,36 +43,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-EP-fhX">
-                                <rect key="frame" x="62" y="283" width="103" height="144.66666666666663"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sDN-qD-gVe" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
+                                <rect key="frame" x="244.33333333333334" y="283" width="112.33333333333334" height="144.66666666666663"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="ppK-Ir-40Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="rpA-Nc-Klo">
+                                        <rect key="frame" x="4.6666666666666572" y="0.0" width="103" height="103"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="103" id="632-Bi-T4R"/>
-                                            <constraint firstAttribute="width" constant="103" id="6O4-Ct-iJI"/>
+                                            <constraint firstAttribute="width" constant="103" id="ITi-yh-6Lc"/>
+                                            <constraint firstAttribute="height" constant="103" id="zek-Hq-hP3"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-rc-bY0">
-                                        <rect key="frame" x="26.333333333333332" y="111" width="50.333333333333343" height="33.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcL-ra-vLQ">
+                                        <rect key="frame" x="0.0" y="111" width="112.33333333333333" height="33.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <connections>
+                                    <outlet property="image" destination="rpA-Nc-Klo" id="Hfq-pV-CCd"/>
+                                    <outlet property="label" destination="qcL-ra-vLQ" id="48T-sV-hRa"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="TRB-EP-fhX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-93.5" id="2qJ-Ic-sGJ"/>
-                            <constraint firstItem="ZOX-FB-eK6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-21.170000000000002" id="8Pa-Zn-Pxc"/>
+                            <constraint firstItem="sDN-qD-gVe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-12.67" id="Mtz-8u-NPy"/>
                             <constraint firstItem="2OV-ec-8Zo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="bQq-Dc-XY9"/>
                             <constraint firstItem="2OV-ec-8Zo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hsX-uJ-IDE"/>
-                            <constraint firstItem="ZOX-FB-eK6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="80" id="qwX-e7-zGc"/>
                             <constraint firstItem="TRB-EP-fhX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-12.67" id="upm-v2-r9v"/>
+                            <constraint firstItem="sDN-qD-gVe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="93.5" id="wei-Dn-EWO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timer" destination="2OV-ec-8Zo" id="xB7-mx-iJf"/>
+                        <outletCollection property="FoodButtons" destination="TRB-EP-fhX" collectionClass="NSMutableArray" id="2N0-Cy-vX6"/>
+                        <outletCollection property="FoodButtons" destination="sDN-qD-gVe" collectionClass="NSMutableArray" id="reP-VG-m4T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
