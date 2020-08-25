@@ -86,7 +86,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="timer" destination="2OV-ec-8Zo" id="xB7-mx-iJf"/>
+                        <outlet property="timerLabel" destination="2OV-ec-8Zo" id="y3u-vz-uNi"/>
                         <outletCollection property="FoodButtons" destination="TRB-EP-fhX" collectionClass="NSMutableArray" id="2N0-Cy-vX6"/>
                         <outletCollection property="FoodButtons" destination="sDN-qD-gVe" collectionClass="NSMutableArray" id="reP-VG-m4T"/>
                     </connections>
