@@ -32,6 +32,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="image" destination="ppK-Ir-40Z" id="eWE-ht-Z6W"/>
                                     <outlet property="label" destination="m8j-rc-bY0" id="SE8-Yw-eRW"/>

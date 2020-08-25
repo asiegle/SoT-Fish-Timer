@@ -14,6 +14,7 @@ class FoodButton: UIStackView {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var image: UIImageView!
+//    @IBOutlet var image: UIImage!
     
     
      

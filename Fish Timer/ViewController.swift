@@ -18,7 +18,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         FoodButtons[0].label.text = "Fish"
+        FoodButtons[0].image.image = UIImage(named: "fish.png")
         FoodButtons[1].label.text = "Trophy Fish"
+        FoodButtons[1].image.image = UIImage(named: "fishTrophy.png")
+        
 
         // Do any additional setup after loading the view.
         
