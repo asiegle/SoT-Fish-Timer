@@ -26,7 +26,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
-
+        
+    
+    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+//        print("tap")
+        let button = sender.view as? FoodButton
+        print(button?.label.text ?? "Error")
+    }
+    
 
 }
 

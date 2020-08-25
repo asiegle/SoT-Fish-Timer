@@ -20,6 +20,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="ppK-Ir-40Z">
                                         <rect key="frame" x="4.6666666666666643" y="0.0" width="103" height="103"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="103" id="632-Bi-T4R"/>
                                             <constraint firstAttribute="width" constant="103" id="6O4-Ct-iJI"/>
@@ -27,6 +28,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-rc-bY0">
                                         <rect key="frame" x="0.0" y="111" width="112.33333333333333" height="33.666666666666657"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -36,6 +38,7 @@
                                 <connections>
                                     <outlet property="image" destination="ppK-Ir-40Z" id="eWE-ht-Z6W"/>
                                     <outlet property="label" destination="m8j-rc-bY0" id="SE8-Yw-eRW"/>
+                                    <outletCollection property="gestureRecognizers" destination="uFc-fc-NKK" appends="YES" id="HUL-Hx-Iys"/>
                                 </connections>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OV-ec-8Zo">
@@ -56,18 +59,22 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcL-ra-vLQ">
                                         <rect key="frame" x="0.0" y="111" width="112.33333333333333" height="33.666666666666657"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="image" destination="rpA-Nc-Klo" id="Hfq-pV-CCd"/>
                                     <outlet property="label" destination="qcL-ra-vLQ" id="48T-sV-hRa"/>
+                                    <outletCollection property="gestureRecognizers" destination="zNP-fg-bQw" appends="YES" id="pE4-Hm-nhL"/>
                                 </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="TRB-EP-fhX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-93.5" id="2qJ-Ic-sGJ"/>
                             <constraint firstItem="sDN-qD-gVe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-12.67" id="Mtz-8u-NPy"/>
@@ -85,8 +92,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uFc-fc-NKK">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="e2E-aa-Mbc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zNP-fg-bQw">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="7Q2-4P-AYb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.77173913043478"/>
         </scene>
     </scenes>
     <resources>
