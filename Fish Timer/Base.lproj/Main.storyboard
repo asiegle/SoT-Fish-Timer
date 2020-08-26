@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,23 +12,59 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Fish_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OV-ec-8Zo">
-                                <rect key="frame" x="148.5" y="114" width="117.5" height="67"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zih-oZ-Otr" userLabel="TimerView">
+                                <rect key="frame" x="0.0" y="74" width="375" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Food Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEe-wF-JaX">
+                                        <rect key="frame" x="174.66666666666669" y="73" width="179.66666666666669" height="26.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w0L-oj-Bt7">
+                                        <rect key="frame" x="24" y="45.333333333333329" width="139.66666666666666" height="139.33333333333337"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="w0L-oj-Bt7" secondAttribute="height" multiplier="1:1" id="Tv6-fT-jrp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OV-ec-8Zo">
+                                        <rect key="frame" x="204.66666666666663" y="100.66666666666666" width="120" height="67"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="sL8-FX-Ydk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="zEe-wF-JaX" firstAttribute="centerX" secondItem="zih-oZ-Otr" secondAttribute="centerX" constant="77" id="0NZ-Zw-HHW"/>
+                                    <constraint firstItem="w0L-oj-Bt7" firstAttribute="centerY" secondItem="zih-oZ-Otr" secondAttribute="centerY" id="6it-y4-NbY"/>
+                                    <constraint firstItem="w0L-oj-Bt7" firstAttribute="leading" secondItem="zih-oZ-Otr" secondAttribute="leading" constant="24" id="FoO-vC-jF6"/>
+                                    <constraint firstItem="zEe-wF-JaX" firstAttribute="centerY" secondItem="zih-oZ-Otr" secondAttribute="centerY" multiplier="0.75" id="M0s-Aj-nyb"/>
+                                    <constraint firstItem="2OV-ec-8Zo" firstAttribute="centerX" secondItem="zEe-wF-JaX" secondAttribute="centerX" id="Ouc-f6-4kR"/>
+                                    <constraint firstAttribute="height" constant="230" id="Wqy-sH-fuk"/>
+                                    <constraint firstItem="2OV-ec-8Zo" firstAttribute="leading" secondItem="w0L-oj-Bt7" secondAttribute="trailing" constant="41" id="lP4-Lw-fCt"/>
+                                    <constraint firstItem="2OV-ec-8Zo" firstAttribute="top" secondItem="zEe-wF-JaX" secondAttribute="bottom" constant="1.3300000000000001" id="yNx-TY-Yr4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIM-in-p3t" userLabel="ButtonContainerView">
-                                <rect key="frame" x="0.0" y="412" width="414" height="450"/>
+                                <rect key="frame" x="0.0" y="328" width="375" height="450"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-f8-2gc" userLabel="ButtonView">
-                                        <rect key="frame" x="40" y="31" width="150" height="120"/>
+                                        <rect key="frame" x="20.666666666666671" y="31" width="150" height="120"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-EP-fhX" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.5" width="100" height="107.5"/>
+                                                <rect key="frame" x="25" y="6.3333333333333144" width="100" height="107.33333333333333"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="ppK-Ir-40Z">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -39,7 +75,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-rc-bY0">
-                                                        <rect key="frame" x="5.5" y="81" width="89" height="26.5"/>
+                                                        <rect key="frame" x="5.3333333333333357" y="81" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -70,10 +106,10 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfK-YR-f9B" userLabel="ButtonView">
-                                        <rect key="frame" x="224" y="31" width="150" height="120"/>
+                                        <rect key="frame" x="204.66666666666663" y="31" width="150" height="120"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-FP-e5e" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.5" width="100" height="107.5"/>
+                                                <rect key="frame" x="25" y="6.3333333333333144" width="100" height="107.33333333333333"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="RaT-X9-DHT">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -84,7 +120,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-mS-fDX">
-                                                        <rect key="frame" x="5.5" y="81" width="89" height="26.5"/>
+                                                        <rect key="frame" x="5.3333333333333428" y="81" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -115,10 +151,10 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFG-dY-2Vv" userLabel="ButtonView">
-                                        <rect key="frame" x="40" y="165" width="150" height="120"/>
+                                        <rect key="frame" x="20.666666666666671" y="165" width="150" height="120"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="bwd-9c-lgG" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.5" width="100" height="107.5"/>
+                                                <rect key="frame" x="25" y="6.3333333333333144" width="100" height="107.33333333333333"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="7mU-87-klb">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -129,7 +165,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tel-7V-O5E">
-                                                        <rect key="frame" x="5.5" y="81" width="89" height="26.5"/>
+                                                        <rect key="frame" x="5.3333333333333357" y="81.000000000000057" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -161,10 +197,10 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-VI-LzQ" userLabel="ButtonView">
-                                        <rect key="frame" x="224" y="165" width="150" height="120"/>
+                                        <rect key="frame" x="204.66666666666663" y="165" width="150" height="120"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="WOO-a9-kyh" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.5" width="100" height="107.5"/>
+                                                <rect key="frame" x="25" y="6.3333333333333144" width="100" height="107.33333333333333"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="dRm-Xc-kbM">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -175,7 +211,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydn-4O-l5q">
-                                                        <rect key="frame" x="5.5" y="81" width="89" height="26.5"/>
+                                                        <rect key="frame" x="5.3333333333333428" y="81.000000000000057" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -207,10 +243,10 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aB8-V3-6Rr" userLabel="ButtonView">
-                                        <rect key="frame" x="40" y="293" width="150" height="120"/>
+                                        <rect key="frame" x="20.666666666666671" y="293" width="150" height="120"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hTn-BG-Jmm" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.5" width="100" height="107.5"/>
+                                                <rect key="frame" x="25" y="6.3333333333333712" width="100" height="107.33333333333333"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="Mrz-AF-k0e">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -221,7 +257,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvQ-Xg-CIa">
-                                                        <rect key="frame" x="5.5" y="81" width="89" height="26.5"/>
+                                                        <rect key="frame" x="5.3333333333333357" y="81" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -253,10 +289,10 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brf-P0-4Wz" userLabel="ButtonView">
-                                        <rect key="frame" x="224" y="293" width="150" height="120"/>
+                                        <rect key="frame" x="204.66666666666663" y="293" width="150" height="120"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="z5r-QJ-Kep" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.5" width="100" height="107.5"/>
+                                                <rect key="frame" x="25" y="6.3333333333333712" width="100" height="107.33333333333333"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="NU0-Rt-hHQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -267,7 +303,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwO-fS-2T3">
-                                                        <rect key="frame" x="5.5" y="81" width="89" height="26.5"/>
+                                                        <rect key="frame" x="5.3333333333333428" y="81" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -325,16 +361,20 @@
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="zih-oZ-Otr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8KZ-rf-wdA"/>
                             <constraint firstAttribute="trailing" secondItem="kIM-in-p3t" secondAttribute="trailing" id="9X6-C8-RhU"/>
                             <constraint firstItem="kIM-in-p3t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T4S-Cg-K9n"/>
-                            <constraint firstItem="2OV-ec-8Zo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="bQq-Dc-XY9"/>
+                            <constraint firstItem="zih-oZ-Otr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZvB-z3-Bpi"/>
                             <constraint firstItem="kIM-in-p3t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dS1-H1-GG0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kIM-in-p3t" secondAttribute="bottom" id="h2U-zk-eo0"/>
-                            <constraint firstItem="2OV-ec-8Zo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hsX-uJ-IDE"/>
+                            <constraint firstItem="zih-oZ-Otr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kWs-bz-3K2"/>
+                            <constraint firstItem="zih-oZ-Otr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="mqN-aM-BKS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="currentFoodImage" destination="w0L-oj-Bt7" id="u8d-Pa-sqQ"/>
+                        <outlet property="statusLabel" destination="zEe-wF-JaX" id="bH2-gP-mcS"/>
                         <outlet property="timerLabel" destination="2OV-ec-8Zo" id="y3u-vz-uNi"/>
                         <outletCollection property="FoodButtons" destination="TRB-EP-fhX" collectionClass="NSMutableArray" id="2N0-Cy-vX6"/>
                         <outletCollection property="FoodButtons" destination="Eyd-FP-e5e" collectionClass="NSMutableArray" id="OjL-fj-e6t"/>
@@ -376,7 +416,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="136.95652173913044"/>
+            <point key="canvasLocation" x="130.40000000000001" y="135.96059113300493"/>
         </scene>
     </scenes>
     <resources>

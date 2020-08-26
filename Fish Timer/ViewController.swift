@@ -11,7 +11,10 @@ class ViewController: UIViewController {
 
     
     @IBOutlet var FoodButtons: [FoodButton]!
+    
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet var currentFoodImage: UIImageView!
     
     var currentTime = 0
     var timer = Timer()
@@ -29,6 +32,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //Populate Buttons
+        
+        statusLabel.text = "Select a Food Type"
         
         FoodButtons[0].label.text = "Fish"
         FoodButtons[0].image.image = UIImage(named: "fish.png")
@@ -65,6 +70,8 @@ class ViewController: UIViewController {
                 
         if (currentTime <= 0) {
             timerLabel.text = "Done!"
+            statusLabel.text = ""
+//            currentFoodImage.image = nil
             timer.invalidate()
         }
     }
@@ -77,7 +84,9 @@ class ViewController: UIViewController {
         let view = sender.view
         let button = (view?.subviews[0])! as! FoodButton //get stackView from UIView
         let name = button.label.text ?? "Error" //Get name of food
-//        print(name)
+        
+        statusLabel.text = "Cooking..."
+        currentFoodImage.image = button.image.image //set image of cooking fish
         
         currentTime = foodTimes[name]?[1] ?? 0 //get time until cooked
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tickTimer), userInfo: button, repeats: true)
