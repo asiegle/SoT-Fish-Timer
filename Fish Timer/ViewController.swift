@@ -60,8 +60,9 @@ class ViewController: UIViewController {
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
         timer.invalidate()
         
-        let button = sender.view as? FoodButton
-        let name = button?.label.text ?? "Error"
+        let view = sender.view
+        let button = (view?.subviews[0])! as! FoodButton
+        let name = button.label.text ?? "Error"
         print(name)
         
         currentTime = foodTimes[name]?[1] ?? 0
