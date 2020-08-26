@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Foundation
 
 class ViewController: UIViewController {
 
@@ -34,25 +33,28 @@ class ViewController: UIViewController {
         FoodButtons[0].image.image = UIImage(named: "fish.png")
         FoodButtons[1].label.text = "Trophy Fish"
         FoodButtons[1].image.image = UIImage(named: "fishTrophy.png")
-        
-
-        
     }
     
+    //convers seconds to minutes+seconds
+    //based on code from https://stackoverflow.com/questions/26794703/swift-integer-conversion-to-hours-minutes-seconds
+    func secondsToMinutesSeconds (seconds : Int) -> (Int, Int) {
+      return ((seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    //Called every second for timer
     @objc func tickTimer() {
         currentTime -= 1
-        timerLabel.text = String(currentTime)
+        let (m, s) = secondsToMinutesSeconds(seconds: currentTime)
 
+        timerLabel.text = String(format: "%01d:%02d", m, s) //"\(m):\(s)" //updates timer
         print(currentTime)
-        
                 
         if (currentTime == 0) {
             timerLabel.text = "Done!"
             timer.invalidate()
         }
-        
-
     }
+
 
     //each stack has it's own Tap recognizer, but they share an action
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
@@ -64,7 +66,10 @@ class ViewController: UIViewController {
         
         currentTime = foodTimes[name]?[1] ?? 0
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tickTimer), userInfo: button, repeats: true)
-        timerLabel.text = String(currentTime)
+        let (m, s) = secondsToMinutesSeconds(seconds: currentTime)
+//        timerLabel.text = "\(m):\(s)"
+        timerLabel.text = String(format: "%01d:%02d", m, s) 
+
 
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         
