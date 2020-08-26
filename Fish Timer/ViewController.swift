@@ -18,21 +18,35 @@ class ViewController: UIViewController {
     
     let foodTimes = ["Fish"  :[30,40,80, 380],
                      "Trophy Fish":[80,90,180, 480],
-                     "meat"  :[50,60,120, 420],
-                     "meg"   :[100,120,240, 540],
-                     "kraken":[100,120,240, 540],
-                     "fruit" :[0,0,15, 315],
-                     "bait"  :[0,0,10, 310]]
+                     "Meat"  :[50,60,120, 420],
+                     "Megaladon"   :[100,120,240, 540],
+                     "Kraken":[100,120,240, 540],
+                     "Fruit" :[0,0,15, 315],
+                     "Bait"  :[0,0,10, 310]]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Populate Buttons
         
         FoodButtons[0].label.text = "Fish"
         FoodButtons[0].image.image = UIImage(named: "fish.png")
+        
         FoodButtons[1].label.text = "Trophy Fish"
         FoodButtons[1].image.image = UIImage(named: "fishTrophy.png")
+        
+        FoodButtons[2].label.text = "Megaladon"
+        FoodButtons[2].image.image = UIImage(named: "Megalodon.png")
+        
+        FoodButtons[3].label.text = "Kraken"
+        FoodButtons[3].image.image = UIImage(named: "fish.png")
+        
+        FoodButtons[4].label.text = "Meat"
+        FoodButtons[4].image.image = UIImage(named: "fish.png")
+        
+        FoodButtons[5].label.text = "Fruit"
+        FoodButtons[5].image.image = UIImage(named: "fish.png")
     }
     
     //convers seconds to minutes+seconds
@@ -44,12 +58,12 @@ class ViewController: UIViewController {
     //Called every second for timer
     @objc func tickTimer() {
         currentTime -= 1
-        let (m, s) = secondsToMinutesSeconds(seconds: currentTime)
+        let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
 
-        timerLabel.text = String(format: "%01d:%02d", m, s) //"\(m):\(s)" //updates timer
-        print(currentTime)
+        timerLabel.text = String(format: "%01d:%02d", m, s) //updates timer
+//        print(currentTime)
                 
-        if (currentTime == 0) {
+        if (currentTime <= 0) {
             timerLabel.text = "Done!"
             timer.invalidate()
         }
@@ -58,18 +72,17 @@ class ViewController: UIViewController {
 
     //each stack has it's own Tap recognizer, but they share an action
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
-        timer.invalidate()
+        timer.invalidate() //end any timers that may have been running
         
         let view = sender.view
-        let button = (view?.subviews[0])! as! FoodButton
-        let name = button.label.text ?? "Error"
-        print(name)
+        let button = (view?.subviews[0])! as! FoodButton //get stackView from UIView
+        let name = button.label.text ?? "Error" //Get name of food
+//        print(name)
         
-        currentTime = foodTimes[name]?[1] ?? 0
+        currentTime = foodTimes[name]?[1] ?? 0 //get time until cooked
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tickTimer), userInfo: button, repeats: true)
         let (m, s) = secondsToMinutesSeconds(seconds: currentTime)
-//        timerLabel.text = "\(m):\(s)"
-        timerLabel.text = String(format: "%01d:%02d", m, s) 
+        timerLabel.text = String(format: "%01d:%02d", m, s) //update time to start time
 
 
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
