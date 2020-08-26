@@ -31,23 +31,34 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OV-ec-8Zo">
-                                        <rect key="frame" x="204.66666666666663" y="100.66666666666666" width="120" height="67"/>
+                                        <rect key="frame" x="204.66666666666663" y="100.66666666666666" width="120" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="sL8-FX-Ydk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sx-BV-hdW">
+                                        <rect key="frame" x="163.66666666666666" y="192" width="48" height="30"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4md-zQ-JW3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="zEe-wF-JaX" firstAttribute="centerX" secondItem="zih-oZ-Otr" secondAttribute="centerX" constant="77" id="0NZ-Zw-HHW"/>
                                     <constraint firstItem="w0L-oj-Bt7" firstAttribute="centerY" secondItem="zih-oZ-Otr" secondAttribute="centerY" id="6it-y4-NbY"/>
+                                    <constraint firstAttribute="bottom" secondItem="8sx-BV-hdW" secondAttribute="bottom" constant="8" id="B8E-jC-RGW"/>
                                     <constraint firstItem="w0L-oj-Bt7" firstAttribute="leading" secondItem="zih-oZ-Otr" secondAttribute="leading" constant="24" id="FoO-vC-jF6"/>
                                     <constraint firstItem="zEe-wF-JaX" firstAttribute="centerY" secondItem="zih-oZ-Otr" secondAttribute="centerY" multiplier="0.75" id="M0s-Aj-nyb"/>
                                     <constraint firstItem="2OV-ec-8Zo" firstAttribute="centerX" secondItem="zEe-wF-JaX" secondAttribute="centerX" id="Ouc-f6-4kR"/>
                                     <constraint firstAttribute="height" constant="230" id="Wqy-sH-fuk"/>
+                                    <constraint firstItem="8sx-BV-hdW" firstAttribute="centerX" secondItem="zih-oZ-Otr" secondAttribute="centerX" id="dAE-Cu-4Un"/>
                                     <constraint firstItem="2OV-ec-8Zo" firstAttribute="leading" secondItem="w0L-oj-Bt7" secondAttribute="trailing" constant="41" id="lP4-Lw-fCt"/>
                                     <constraint firstItem="2OV-ec-8Zo" firstAttribute="top" secondItem="zEe-wF-JaX" secondAttribute="bottom" constant="1.3300000000000001" id="yNx-TY-Yr4"/>
                                 </constraints>
@@ -78,7 +89,7 @@
                                                         <rect key="frame" x="5.3333333333333357" y="81" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -89,7 +100,7 @@
                                                 </connections>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.21835907519562178" green="0.8778133095854922" blue="0.81838637582241769" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="TRB-EP-fhX" firstAttribute="centerY" secondItem="0u8-f8-2gc" secondAttribute="centerY" id="4MZ-UY-b8J"/>
                                             <constraint firstAttribute="width" constant="150" id="Jnx-zi-DHe"/>
@@ -98,7 +109,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
+                                                <integer key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -123,7 +134,7 @@
                                                         <rect key="frame" x="5.3333333333333428" y="81" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -134,7 +145,7 @@
                                                 </connections>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.2183590752" green="0.87781330960000004" blue="0.81838637579999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="gaR-IC-PaE"/>
                                             <constraint firstItem="Eyd-FP-e5e" firstAttribute="centerX" secondItem="XfK-YR-f9B" secondAttribute="centerX" id="kZN-ic-QNo"/>
@@ -143,7 +154,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
+                                                <integer key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -168,7 +179,7 @@
                                                         <rect key="frame" x="5.3333333333333357" y="81.000000000000057" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -179,7 +190,7 @@
                                                 </connections>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.2183590752" green="0.87781330960000004" blue="0.81838637579999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="bwd-9c-lgG" firstAttribute="centerX" secondItem="lFG-dY-2Vv" secondAttribute="centerX" id="CbE-Oc-QPJ"/>
@@ -189,7 +200,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
+                                                <integer key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -214,7 +225,7 @@
                                                         <rect key="frame" x="5.3333333333333428" y="81.000000000000057" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -225,7 +236,7 @@
                                                 </connections>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.2183590752" green="0.87781330960000004" blue="0.81838637579999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="FkF-y7-dgD"/>
@@ -235,7 +246,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
+                                                <integer key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -260,7 +271,7 @@
                                                         <rect key="frame" x="5.3333333333333357" y="81" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -271,7 +282,7 @@
                                                 </connections>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.2183590752" green="0.87781330960000004" blue="0.81838637579999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="hTn-BG-Jmm" firstAttribute="centerY" secondItem="aB8-V3-6Rr" secondAttribute="centerY" id="86S-6x-udL"/>
@@ -281,7 +292,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
+                                                <integer key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -306,7 +317,7 @@
                                                         <rect key="frame" x="5.3333333333333428" y="81" width="89" height="26.333333333333329"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -317,7 +328,7 @@
                                                 </connections>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.2183590752" green="0.87781330960000004" blue="0.81838637579999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="6td-fO-LHx"/>
@@ -327,7 +338,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="30"/>
+                                                <integer key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -335,7 +346,7 @@
                                         </connections>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="lFG-dY-2Vv" firstAttribute="centerY" secondItem="kIM-in-p3t" secondAttribute="centerY" id="563-mY-Yy9"/>
                                     <constraint firstItem="0u8-f8-2gc" firstAttribute="centerY" secondItem="kIM-in-p3t" secondAttribute="centerY" constant="-134" id="6FX-g1-d6P"/>
@@ -358,7 +369,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zih-oZ-Otr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8KZ-rf-wdA"/>
@@ -373,6 +384,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="8sx-BV-hdW" id="Pfr-3S-YmZ"/>
                         <outlet property="currentFoodImage" destination="w0L-oj-Bt7" id="u8d-Pa-sqQ"/>
                         <outlet property="statusLabel" destination="zEe-wF-JaX" id="bH2-gP-mcS"/>
                         <outlet property="timerLabel" destination="2OV-ec-8Zo" id="y3u-vz-uNi"/>

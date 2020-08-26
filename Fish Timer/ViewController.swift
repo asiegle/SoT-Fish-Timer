@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet var currentFoodImage: UIImageView!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var currentTime = 0
     var timer = Timer()
@@ -31,10 +32,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Populate Buttons
-        
+        //Set Labels
         statusLabel.text = "Select a Food Type"
+        cancelButton.isHidden = true
         
+        //Populate Buttons
         FoodButtons[0].label.text = "Fish"
         FoodButtons[0].image.image = UIImage(named: "fish.png")
         
@@ -71,6 +73,7 @@ class ViewController: UIViewController {
         if (currentTime <= 0) {
             timerLabel.text = "Done!"
             statusLabel.text = ""
+            cancelButton.isHidden = true
 //            currentFoodImage.image = nil
             timer.invalidate()
         }
@@ -85,23 +88,27 @@ class ViewController: UIViewController {
         let button = (view?.subviews[0])! as! FoodButton //get stackView from UIView
         let name = button.label.text ?? "Error" //Get name of food
         
-        statusLabel.text = "Cooking..."
+        statusLabel.text = "Cooking..." //Set status text
         currentFoodImage.image = button.image.image //set image of cooking fish
+        cancelButton.isHidden = false //Show cancel button
+
         
         currentTime = foodTimes[name]?[1] ?? 0 //get time until cooked
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tickTimer), userInfo: button, repeats: true)
         let (m, s) = secondsToMinutesSeconds(seconds: currentTime)
         timerLabel.text = String(format: "%01d:%02d", m, s) //update time to start time
 
-
+        //Allow timer to run on background task
         RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
-        
-        
-       
-
-
     }
     
-
+    @IBAction func buttonPressed(_ sender: Any) {
+        timer.invalidate()
+        statusLabel.text = "Select a Food Type"
+        timerLabel.text = "0:00"
+        currentFoodImage.image = nil
+        cancelButton.isHidden = true
+    }
+    
 }
 
