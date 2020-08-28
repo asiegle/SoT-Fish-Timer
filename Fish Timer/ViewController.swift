@@ -119,48 +119,51 @@ class ViewController: UIViewController {
 
 
     //each stack has it's own Tap recognizer, but they share an action
-    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
-        
+    @IBAction func onPress(_ sender: UILongPressGestureRecognizer) {
+ 
         let view = sender.view
         let button = (view?.subviews[0])! as! FoodButton //get stackView from UIView
         let name = button.label.text ?? "Error" //Get name of food
-        
-        UIView.animate(withDuration: 0.1, animations: {
-            view?.transform = CGAffineTransform(scaleX: 0.965, y: 0.95)
-        }, completion: { finish in
-            UIView.animate(withDuration: 0.2, animations: {
-                view?.transform = CGAffineTransform.identity
-            })
-        })
-        
-        timer.invalidate() //end any timers that may have been running
-        timerLabel.textColor = UIColor.label //Reset label color
-        currentFoodImage.image = button.image.image //set image of cooking fish
-        cancelButton.isHidden = false //Show cancel button
-        statusLabel.isHidden = false
-        timerLabel.isHidden = false
-        promptLabel.isHidden = true
-        cycleCount = 0
-       
-        //Create tuple of all stages for current food
-        selectedStages = (foodTimes[name]?[0] ?? 0, foodTimes[name]?[1] ?? 0, foodTimes[name]?[2] ?? 0, foodTimes[name]?[3] ?? 0)
-        
-        //Special case for fruit, which go straight to burning
-        if (selectedStages.1 != 0) {
-            statusLabel.text = "Cooking..." //Set status text
-            currentTime = selectedStages.1
-        } else {
-            statusLabel.text = "You can't cook fruit! \n Time until burnt:"
-            timerLabel.textColor = UIColor.orange
-            currentTime = selectedStages.2
+                
+        if sender.state == .began {
+           UIView.animate(withDuration: 0.1, animations: {
+               view?.transform = CGAffineTransform(scaleX: 0.95, y: 0.93)
+           })
         }
+        if sender.state == .ended {
+             UIView.animate(withDuration: 0.1, animations: {
+                view?.transform = CGAffineTransform.identity
+             })
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tickTimer), userInfo: button, repeats: true)
-        let (m, s) = secondsToMinutesSeconds(seconds: currentTime)
-        timerLabel.text = String(format: "%01d:%02d", m, s) //update time to start time
+            timer.invalidate() //end any timers that may have been running
+            timerLabel.textColor = UIColor.label //Reset label color
+            currentFoodImage.image = button.image.image //set image of cooking fish
+            cancelButton.isHidden = false //Show cancel button
+            statusLabel.isHidden = false
+            timerLabel.isHidden = false
+            promptLabel.isHidden = true
+            cycleCount = 0
+           
+            //Create tuple of all stages for current food
+            selectedStages = (foodTimes[name]?[0] ?? 0, foodTimes[name]?[1] ?? 0, foodTimes[name]?[2] ?? 0, foodTimes[name]?[3] ?? 0)
+            
+            //Special case for fruit, which go straight to burning
+            if (selectedStages.1 != 0) {
+                statusLabel.text = "Cooking..." //Set status text
+                currentTime = selectedStages.1
+            } else {
+                statusLabel.text = "You can't cook fruit! \n Time until burnt:"
+                timerLabel.textColor = UIColor.orange
+                currentTime = selectedStages.2
+            }
+            
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tickTimer), userInfo: button, repeats: true)
+            let (m, s) = secondsToMinutesSeconds(seconds: currentTime)
+            timerLabel.text = String(format: "%01d:%02d", m, s) //update time to start time
 
-        //Allow timer to run on background task
-        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
+            //Allow timer to run on background task
+            RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
+        }
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
@@ -175,6 +178,10 @@ class ViewController: UIViewController {
         cancelButton.isHidden = true
     }
     
+    
+    
+    
+  
     
     
 

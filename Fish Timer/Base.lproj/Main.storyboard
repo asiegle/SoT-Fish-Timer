@@ -20,8 +20,8 @@
                                 <rect key="frame" x="10" y="10" width="300" height="180"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sx-BV-hdW">
-                                        <rect key="frame" x="128" y="139" width="44" height="40"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                        <rect key="frame" x="124.5" y="139" width="51" height="40"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -50,7 +50,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="sL8-FX-Ydk"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="35"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -60,8 +60,8 @@
                                         </constraints>
                                     </stackView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Food Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5F-71-544">
-                                        <rect key="frame" x="33" y="63.5" width="234.5" height="53"/>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="33"/>
+                                        <rect key="frame" x="21.5" y="63.5" width="257" height="53"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="33"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -116,6 +116,7 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="TRB-EP-fhX" firstAttribute="centerY" secondItem="0u8-f8-2gc" secondAttribute="centerY" id="4MZ-UY-b8J"/>
                                             <constraint firstItem="ppK-Ir-40Z" firstAttribute="height" secondItem="0u8-f8-2gc" secondAttribute="height" multiplier="0.55" id="LsG-kA-3qW"/>
@@ -127,7 +128,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="uFc-fc-NKK" appends="YES" id="UUt-ND-27R"/>
+                                            <outletCollection property="gestureRecognizers" destination="nh3-W3-oes" appends="YES" id="pHF-dS-YrK"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfK-YR-f9B" userLabel="ButtonView">
@@ -159,6 +160,7 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="RaT-X9-DHT" firstAttribute="height" secondItem="XfK-YR-f9B" secondAttribute="height" multiplier="0.55" id="IxK-3k-7Gs"/>
                                             <constraint firstItem="Eyd-FP-e5e" firstAttribute="centerX" secondItem="XfK-YR-f9B" secondAttribute="centerX" id="kZN-ic-QNo"/>
@@ -170,7 +172,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="zNP-fg-bQw" appends="YES" id="brZ-eh-rZi"/>
+                                            <outletCollection property="gestureRecognizers" destination="uvw-XM-Qxp" appends="YES" id="GC1-Hd-vVY"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFG-dY-2Vv" userLabel="ButtonView">
@@ -214,7 +216,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="mLW-d9-ZGf" appends="YES" id="auy-uV-5Ww"/>
+                                            <outletCollection property="gestureRecognizers" destination="7qx-AO-fx2" appends="YES" id="Ig8-pm-zqg"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-VI-LzQ" userLabel="ButtonView">
@@ -258,7 +260,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="Kkc-U3-lcr" appends="YES" id="c4m-c3-Ns9"/>
+                                            <outletCollection property="gestureRecognizers" destination="1fx-en-4RV" appends="YES" id="ulC-zI-fDJ"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aB8-V3-6Rr" userLabel="ButtonView">
@@ -302,7 +304,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="4EG-TK-8NU" appends="YES" id="QTP-lf-Aer"/>
+                                            <outletCollection property="gestureRecognizers" destination="sCU-cL-DRC" appends="YES" id="MJb-EX-wrb"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brf-P0-4Wz" userLabel="ButtonView">
@@ -346,7 +348,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="fb4-oN-Te7" appends="YES" id="K8W-4b-Btm"/>
+                                            <outletCollection property="gestureRecognizers" destination="39g-Yi-cFN" appends="YES" id="IbB-kO-QGw"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -414,36 +416,66 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="uFc-fc-NKK" userLabel="TopLeft">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="nh3-W3-oes" userLabel="TopLeft">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimumPressDuration">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="xey-Um-ln4"/>
+                        <action selector="onPress:" destination="BYZ-38-t0r" id="TKq-4G-n8N"/>
                     </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="zNP-fg-bQw" userLabel="TopRight">
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="uvw-XM-Qxp" userLabel="TopRight">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimumPressDuration">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="7Q2-4P-AYb"/>
+                        <action selector="onPress:" destination="BYZ-38-t0r" id="Vj1-fH-hy1"/>
                     </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="mLW-d9-ZGf" userLabel="MiddleLeft">
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="7qx-AO-fx2" userLabel="MiddleLeft">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimumPressDuration">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="hqz-OY-sIs"/>
+                        <action selector="onPress:" destination="BYZ-38-t0r" id="LHK-hC-wZf"/>
                     </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="Kkc-U3-lcr" userLabel="MiddleRight">
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="1fx-en-4RV" userLabel="MiddleRight">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimumPressDuration">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="ovv-tG-gej"/>
+                        <action selector="onPress:" destination="BYZ-38-t0r" id="TzP-7b-Jb0"/>
                     </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="4EG-TK-8NU" userLabel="BottomLeft">
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="sCU-cL-DRC" userLabel="BottomLeft">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimumPressDuration">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="r55-PE-q4B"/>
+                        <action selector="onPress:" destination="BYZ-38-t0r" id="v9n-rs-mCH"/>
                     </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="fb4-oN-Te7" userLabel="BottomRight">
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="39g-Yi-cFN" userLabel="BottomRight">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimumPressDuration">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="kjZ-jQ-c3n"/>
+                        <action selector="onPress:" destination="BYZ-38-t0r" id="4se-bC-B0D"/>
                     </connections>
-                </tapGestureRecognizer>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="127.53623188405798" y="134.59821428571428"/>
         </scene>
