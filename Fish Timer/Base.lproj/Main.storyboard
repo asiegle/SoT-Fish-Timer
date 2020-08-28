@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,35 +13,30 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Fish_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zih-oZ-Otr" userLabel="TimerView">
-                                <rect key="frame" x="0.0" y="74" width="375" height="230"/>
+                                <rect key="frame" x="10" y="10" width="300" height="180"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Food Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEe-wF-JaX">
-                                        <rect key="frame" x="174.66666666666669" y="73" width="179.66666666666669" height="26.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Food Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zEe-wF-JaX">
+                                        <rect key="frame" x="142.5" y="35" width="150" height="32"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w0L-oj-Bt7">
-                                        <rect key="frame" x="24" y="45.333333333333329" width="139.66666666666666" height="139.33333333333337"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="w0L-oj-Bt7" secondAttribute="height" multiplier="1:1" id="Tv6-fT-jrp"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OV-ec-8Zo">
-                                        <rect key="frame" x="204.66666666666663" y="100.66666666666666" width="120" height="54"/>
+                                        <rect key="frame" x="157.5" y="75" width="120" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="sL8-FX-Ydk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sx-BV-hdW">
-                                        <rect key="frame" x="163.66666666666666" y="192" width="48" height="30"/>
+                                        <rect key="frame" x="128" y="139" width="44" height="40"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -48,19 +44,26 @@
                                             <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4md-zQ-JW3"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w0L-oj-Bt7">
+                                        <rect key="frame" x="10" y="16" width="130" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="w0L-oj-Bt7" secondAttribute="height" multiplier="1:1" id="hue-WK-5V8"/>
+                                            <constraint firstAttribute="width" constant="130" id="voU-bE-YKh"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="zEe-wF-JaX" firstAttribute="centerX" secondItem="zih-oZ-Otr" secondAttribute="centerX" constant="77" id="0NZ-Zw-HHW"/>
-                                    <constraint firstItem="w0L-oj-Bt7" firstAttribute="centerY" secondItem="zih-oZ-Otr" secondAttribute="centerY" id="6it-y4-NbY"/>
-                                    <constraint firstAttribute="bottom" secondItem="8sx-BV-hdW" secondAttribute="bottom" constant="8" id="B8E-jC-RGW"/>
-                                    <constraint firstItem="w0L-oj-Bt7" firstAttribute="leading" secondItem="zih-oZ-Otr" secondAttribute="leading" constant="24" id="FoO-vC-jF6"/>
-                                    <constraint firstItem="zEe-wF-JaX" firstAttribute="centerY" secondItem="zih-oZ-Otr" secondAttribute="centerY" multiplier="0.75" id="M0s-Aj-nyb"/>
+                                    <constraint firstItem="zEe-wF-JaX" firstAttribute="centerX" secondItem="zih-oZ-Otr" secondAttribute="centerX" multiplier="1.45" id="0NZ-Zw-HHW"/>
+                                    <constraint firstItem="8sx-BV-hdW" firstAttribute="centerX" secondItem="zih-oZ-Otr" secondAttribute="centerX" id="AWb-uw-zla"/>
+                                    <constraint firstAttribute="bottom" secondItem="8sx-BV-hdW" secondAttribute="bottom" constant="1" id="Cwy-ej-9gJ"/>
                                     <constraint firstItem="2OV-ec-8Zo" firstAttribute="centerX" secondItem="zEe-wF-JaX" secondAttribute="centerX" id="Ouc-f6-4kR"/>
-                                    <constraint firstAttribute="height" constant="230" id="Wqy-sH-fuk"/>
-                                    <constraint firstItem="8sx-BV-hdW" firstAttribute="centerX" secondItem="zih-oZ-Otr" secondAttribute="centerX" id="dAE-Cu-4Un"/>
-                                    <constraint firstItem="2OV-ec-8Zo" firstAttribute="leading" secondItem="w0L-oj-Bt7" secondAttribute="trailing" constant="41" id="lP4-Lw-fCt"/>
-                                    <constraint firstItem="2OV-ec-8Zo" firstAttribute="top" secondItem="zEe-wF-JaX" secondAttribute="bottom" constant="1.3300000000000001" id="yNx-TY-Yr4"/>
+                                    <constraint firstItem="zEe-wF-JaX" firstAttribute="width" secondItem="zih-oZ-Otr" secondAttribute="width" multiplier="0.5" id="T7G-o6-PUR"/>
+                                    <constraint firstAttribute="height" constant="180" id="ajZ-nc-tlH"/>
+                                    <constraint firstItem="zEe-wF-JaX" firstAttribute="top" secondItem="zih-oZ-Otr" secondAttribute="top" constant="35" id="g6S-Gu-U3z"/>
+                                    <constraint firstItem="w0L-oj-Bt7" firstAttribute="centerY" secondItem="zih-oZ-Otr" secondAttribute="centerY" multiplier="0.9" id="gOx-Ja-7rA"/>
+                                    <constraint firstItem="w0L-oj-Bt7" firstAttribute="centerX" secondItem="zih-oZ-Otr" secondAttribute="centerX" multiplier="0.5" id="trK-2E-UDA"/>
+                                    <constraint firstItem="2OV-ec-8Zo" firstAttribute="top" secondItem="zEe-wF-JaX" secondAttribute="bottom" constant="8" symbolic="YES" id="yNx-TY-Yr4"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -69,24 +72,23 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIM-in-p3t" userLabel="ButtonContainerView">
-                                <rect key="frame" x="0.0" y="328" width="375" height="450"/>
+                                <rect key="frame" x="10" y="205" width="300" height="353"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u8-f8-2gc" userLabel="ButtonView">
-                                        <rect key="frame" x="20.666666666666671" y="31" width="150" height="120"/>
+                                        <rect key="frame" x="15" y="15" width="127.5" height="97.5"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-EP-fhX" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.3333333333333144" width="100" height="107.33333333333333"/>
+                                                <rect key="frame" x="23" y="10" width="81.5" height="77.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="ppK-Ir-40Z">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                                        <rect key="frame" x="4" y="0.0" width="73.5" height="58.5"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="632-Bi-T4R"/>
-                                                            <constraint firstAttribute="width" constant="100" id="6O4-Ct-iJI"/>
+                                                            <constraint firstAttribute="width" secondItem="ppK-Ir-40Z" secondAttribute="height" multiplier="5:4" id="1nL-FB-vGO"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-rc-bY0">
-                                                        <rect key="frame" x="5.3333333333333357" y="81" width="89" height="26.333333333333329"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-rc-bY0">
+                                                        <rect key="frame" x="0.0" y="59.5" width="81.5" height="18"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
@@ -103,13 +105,14 @@
                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="TRB-EP-fhX" firstAttribute="centerY" secondItem="0u8-f8-2gc" secondAttribute="centerY" id="4MZ-UY-b8J"/>
-                                            <constraint firstAttribute="width" constant="150" id="Jnx-zi-DHe"/>
+                                            <constraint firstItem="ppK-Ir-40Z" firstAttribute="height" secondItem="0u8-f8-2gc" secondAttribute="height" multiplier="0.6" id="LsG-kA-3qW"/>
                                             <constraint firstItem="TRB-EP-fhX" firstAttribute="centerX" secondItem="0u8-f8-2gc" secondAttribute="centerX" id="Sb4-va-Mlu"/>
-                                            <constraint firstAttribute="height" constant="120" id="vfa-iD-wsD"/>
+                                            <constraint firstAttribute="bottom" secondItem="TRB-EP-fhX" secondAttribute="bottom" constant="10" id="aWC-ZJ-Icg"/>
+                                            <constraint firstItem="TRB-EP-fhX" firstAttribute="top" secondItem="0u8-f8-2gc" secondAttribute="top" constant="10" id="m7I-RS-jhk"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
+                                                <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -117,21 +120,20 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfK-YR-f9B" userLabel="ButtonView">
-                                        <rect key="frame" x="204.66666666666663" y="31" width="150" height="120"/>
+                                        <rect key="frame" x="157.5" y="15" width="127.5" height="97.5"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-FP-e5e" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.3333333333333144" width="100" height="107.33333333333333"/>
+                                                <rect key="frame" x="23" y="10" width="81.5" height="77.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="RaT-X9-DHT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                                        <rect key="frame" x="4" y="0.0" width="73.5" height="58.5"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="75e-S8-Qqd"/>
-                                                            <constraint firstAttribute="width" constant="100" id="skH-uW-KyW"/>
+                                                            <constraint firstAttribute="width" secondItem="RaT-X9-DHT" secondAttribute="height" multiplier="5:4" id="HQO-lA-NLI"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-mS-fDX">
-                                                        <rect key="frame" x="5.3333333333333428" y="81" width="89" height="26.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="59.5" width="81.5" height="18"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
@@ -147,14 +149,15 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="gaR-IC-PaE"/>
+                                            <constraint firstItem="Eyd-FP-e5e" firstAttribute="top" secondItem="XfK-YR-f9B" secondAttribute="top" constant="10" id="6cZ-rw-S9Y"/>
+                                            <constraint firstItem="RaT-X9-DHT" firstAttribute="height" secondItem="XfK-YR-f9B" secondAttribute="height" multiplier="0.6" id="IxK-3k-7Gs"/>
                                             <constraint firstItem="Eyd-FP-e5e" firstAttribute="centerX" secondItem="XfK-YR-f9B" secondAttribute="centerX" id="kZN-ic-QNo"/>
+                                            <constraint firstAttribute="bottom" secondItem="Eyd-FP-e5e" secondAttribute="bottom" constant="10" id="lvO-Is-7S7"/>
                                             <constraint firstItem="Eyd-FP-e5e" firstAttribute="centerY" secondItem="XfK-YR-f9B" secondAttribute="centerY" id="uyJ-da-hIl"/>
-                                            <constraint firstAttribute="width" constant="150" id="vVf-ZP-tkT"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
+                                                <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -162,21 +165,20 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFG-dY-2Vv" userLabel="ButtonView">
-                                        <rect key="frame" x="20.666666666666671" y="165" width="150" height="120"/>
+                                        <rect key="frame" x="15" y="127.5" width="127.5" height="98"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="bwd-9c-lgG" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.3333333333333144" width="100" height="107.33333333333333"/>
+                                                <rect key="frame" x="23" y="10" width="81.5" height="78"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="7mU-87-klb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                                        <rect key="frame" x="4" y="0.0" width="73.5" height="59"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="knL-6G-fU5"/>
-                                                            <constraint firstAttribute="height" constant="80" id="s6l-VL-bek"/>
+                                                            <constraint firstAttribute="width" secondItem="7mU-87-klb" secondAttribute="height" multiplier="5:4" id="fI9-V3-wcO"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tel-7V-O5E">
-                                                        <rect key="frame" x="5.3333333333333357" y="81.000000000000057" width="89" height="26.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="60" width="81.5" height="18"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
@@ -193,14 +195,15 @@
                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="7mU-87-klb" firstAttribute="height" secondItem="lFG-dY-2Vv" secondAttribute="height" multiplier="0.6" id="5WL-nz-JiP"/>
+                                            <constraint firstAttribute="bottom" secondItem="bwd-9c-lgG" secondAttribute="bottom" constant="10" id="COH-99-6OF"/>
                                             <constraint firstItem="bwd-9c-lgG" firstAttribute="centerX" secondItem="lFG-dY-2Vv" secondAttribute="centerX" id="CbE-Oc-QPJ"/>
-                                            <constraint firstAttribute="width" constant="150" id="Sf6-fg-TAo"/>
-                                            <constraint firstAttribute="height" constant="120" id="gFw-Lv-w36"/>
                                             <constraint firstItem="bwd-9c-lgG" firstAttribute="centerY" secondItem="lFG-dY-2Vv" secondAttribute="centerY" id="jjJ-W3-5uk"/>
+                                            <constraint firstItem="bwd-9c-lgG" firstAttribute="top" secondItem="lFG-dY-2Vv" secondAttribute="top" constant="10" id="vBf-AN-oEX"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
+                                                <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -208,21 +211,20 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-VI-LzQ" userLabel="ButtonView">
-                                        <rect key="frame" x="204.66666666666663" y="165" width="150" height="120"/>
+                                        <rect key="frame" x="157.5" y="127.5" width="127.5" height="98"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="WOO-a9-kyh" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.3333333333333144" width="100" height="107.33333333333333"/>
+                                                <rect key="frame" x="23" y="10" width="81.5" height="78"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="dRm-Xc-kbM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                                        <rect key="frame" x="4" y="0.0" width="73.5" height="59"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="WbQ-Ds-jzi"/>
-                                                            <constraint firstAttribute="width" constant="100" id="aXf-g3-o19"/>
+                                                            <constraint firstAttribute="width" secondItem="dRm-Xc-kbM" secondAttribute="height" multiplier="5:4" id="1ug-TJ-K6H"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydn-4O-l5q">
-                                                        <rect key="frame" x="5.3333333333333428" y="81.000000000000057" width="89" height="26.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="60" width="81.5" height="18"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
@@ -239,14 +241,15 @@
                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="FkF-y7-dgD"/>
+                                            <constraint firstItem="dRm-Xc-kbM" firstAttribute="height" secondItem="Umy-VI-LzQ" secondAttribute="height" multiplier="0.6" id="HAT-uj-Fbq"/>
                                             <constraint firstItem="WOO-a9-kyh" firstAttribute="centerX" secondItem="Umy-VI-LzQ" secondAttribute="centerX" id="N4n-3O-q4l"/>
+                                            <constraint firstAttribute="bottom" secondItem="WOO-a9-kyh" secondAttribute="bottom" constant="10" id="Pl6-QY-rKU"/>
                                             <constraint firstItem="WOO-a9-kyh" firstAttribute="centerY" secondItem="Umy-VI-LzQ" secondAttribute="centerY" id="Pzt-Ec-oqb"/>
-                                            <constraint firstAttribute="width" constant="150" id="iiM-5k-sDF"/>
+                                            <constraint firstItem="WOO-a9-kyh" firstAttribute="top" secondItem="Umy-VI-LzQ" secondAttribute="top" constant="10" id="za1-69-1Uz"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
+                                                <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -254,21 +257,20 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aB8-V3-6Rr" userLabel="ButtonView">
-                                        <rect key="frame" x="20.666666666666671" y="293" width="150" height="120"/>
+                                        <rect key="frame" x="15" y="240.5" width="127.5" height="97.5"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hTn-BG-Jmm" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.3333333333333712" width="100" height="107.33333333333333"/>
+                                                <rect key="frame" x="23" y="10" width="81.5" height="77.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="Mrz-AF-k0e">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                                        <rect key="frame" x="4" y="0.0" width="73.5" height="58.5"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="beo-4o-JVc"/>
-                                                            <constraint firstAttribute="height" constant="80" id="fyU-1J-cks"/>
+                                                            <constraint firstAttribute="width" secondItem="Mrz-AF-k0e" secondAttribute="height" multiplier="5:4" id="rHq-q5-pWr"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvQ-Xg-CIa">
-                                                        <rect key="frame" x="5.3333333333333357" y="81" width="89" height="26.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="59.5" width="81.5" height="18"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
@@ -286,13 +288,14 @@
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="hTn-BG-Jmm" firstAttribute="centerY" secondItem="aB8-V3-6Rr" secondAttribute="centerY" id="86S-6x-udL"/>
-                                            <constraint firstAttribute="height" constant="120" id="OMc-eA-J0v"/>
+                                            <constraint firstItem="Mrz-AF-k0e" firstAttribute="height" secondItem="aB8-V3-6Rr" secondAttribute="height" multiplier="0.6" id="JDo-jr-rf8"/>
+                                            <constraint firstAttribute="bottom" secondItem="hTn-BG-Jmm" secondAttribute="bottom" constant="10" id="Ngz-7f-udV"/>
                                             <constraint firstItem="hTn-BG-Jmm" firstAttribute="centerX" secondItem="aB8-V3-6Rr" secondAttribute="centerX" id="PcG-xs-ZDc"/>
-                                            <constraint firstAttribute="width" constant="150" id="zAM-y3-7GE"/>
+                                            <constraint firstItem="hTn-BG-Jmm" firstAttribute="top" secondItem="aB8-V3-6Rr" secondAttribute="top" constant="10" id="RIP-0e-UZp"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
+                                                <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -300,21 +303,20 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brf-P0-4Wz" userLabel="ButtonView">
-                                        <rect key="frame" x="204.66666666666663" y="293" width="150" height="120"/>
+                                        <rect key="frame" x="157.5" y="240.5" width="127.5" height="97.5"/>
                                         <subviews>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="z5r-QJ-Kep" customClass="FoodButton" customModule="Fish_Timer" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="6.3333333333333712" width="100" height="107.33333333333333"/>
+                                                <rect key="frame" x="23" y="10" width="81.5" height="77.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fish" translatesAutoresizingMaskIntoConstraints="NO" id="NU0-Rt-hHQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                                        <rect key="frame" x="4" y="0.0" width="73.5" height="58.5"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="6Uh-Z3-Ujv"/>
-                                                            <constraint firstAttribute="width" constant="100" id="vvd-P7-p71"/>
+                                                            <constraint firstAttribute="width" secondItem="NU0-Rt-hHQ" secondAttribute="height" multiplier="5:4" id="FKY-NC-MMo"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foodType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwO-fS-2T3">
-                                                        <rect key="frame" x="5.3333333333333428" y="81" width="89" height="26.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="59.5" width="81.5" height="18"/>
                                                         <gestureRecognizers/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
@@ -331,14 +333,15 @@
                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="6td-fO-LHx"/>
+                                            <constraint firstAttribute="bottom" secondItem="z5r-QJ-Kep" secondAttribute="bottom" constant="10" id="5xB-L9-mqX"/>
                                             <constraint firstItem="z5r-QJ-Kep" firstAttribute="centerX" secondItem="brf-P0-4Wz" secondAttribute="centerX" id="8Jb-3D-cmQ"/>
-                                            <constraint firstAttribute="height" constant="120" id="p1r-UE-0qw"/>
+                                            <constraint firstItem="z5r-QJ-Kep" firstAttribute="top" secondItem="brf-P0-4Wz" secondAttribute="top" constant="10" id="aje-Zl-Xw9"/>
+                                            <constraint firstItem="NU0-Rt-hHQ" firstAttribute="height" secondItem="brf-P0-4Wz" secondAttribute="height" multiplier="0.6" id="rOp-Dr-B9Z"/>
                                             <constraint firstItem="z5r-QJ-Kep" firstAttribute="centerY" secondItem="brf-P0-4Wz" secondAttribute="centerY" id="vDQ-Dg-Yfp"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="50"/>
+                                                <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -348,38 +351,50 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="lFG-dY-2Vv" firstAttribute="centerY" secondItem="kIM-in-p3t" secondAttribute="centerY" id="563-mY-Yy9"/>
-                                    <constraint firstItem="0u8-f8-2gc" firstAttribute="centerY" secondItem="kIM-in-p3t" secondAttribute="centerY" constant="-134" id="6FX-g1-d6P"/>
-                                    <constraint firstItem="aB8-V3-6Rr" firstAttribute="centerY" secondItem="kIM-in-p3t" secondAttribute="centerY" constant="128" id="7hU-qE-oW7"/>
-                                    <constraint firstItem="0u8-f8-2gc" firstAttribute="centerX" secondItem="kIM-in-p3t" secondAttribute="centerX" constant="-92" id="D6G-4J-rZ8"/>
-                                    <constraint firstItem="aB8-V3-6Rr" firstAttribute="centerX" secondItem="kIM-in-p3t" secondAttribute="centerX" constant="-92" id="GN7-b4-fK4"/>
-                                    <constraint firstItem="XfK-YR-f9B" firstAttribute="centerY" secondItem="kIM-in-p3t" secondAttribute="centerY" constant="-134" id="K8H-yU-duu"/>
-                                    <constraint firstItem="XfK-YR-f9B" firstAttribute="centerX" secondItem="kIM-in-p3t" secondAttribute="centerX" constant="92" id="PrT-pj-VFK"/>
-                                    <constraint firstItem="brf-P0-4Wz" firstAttribute="centerY" secondItem="kIM-in-p3t" secondAttribute="centerY" constant="128" id="aUM-7i-YU6"/>
-                                    <constraint firstItem="Umy-VI-LzQ" firstAttribute="centerY" secondItem="kIM-in-p3t" secondAttribute="centerY" id="fzi-Be-xHK"/>
-                                    <constraint firstItem="lFG-dY-2Vv" firstAttribute="centerX" secondItem="kIM-in-p3t" secondAttribute="centerX" constant="-92" id="iVp-fB-chq"/>
-                                    <constraint firstItem="brf-P0-4Wz" firstAttribute="centerX" secondItem="kIM-in-p3t" secondAttribute="centerX" constant="92" id="l2d-QM-uJ3"/>
-                                    <constraint firstItem="Umy-VI-LzQ" firstAttribute="centerX" secondItem="kIM-in-p3t" secondAttribute="centerX" constant="92" id="xMo-cM-Foe"/>
-                                    <constraint firstAttribute="height" constant="450" id="yUa-Jf-s7M"/>
+                                    <constraint firstItem="lFG-dY-2Vv" firstAttribute="leading" secondItem="kIM-in-p3t" secondAttribute="leading" constant="15" id="05X-Vy-Agd"/>
+                                    <constraint firstAttribute="bottom" secondItem="aB8-V3-6Rr" secondAttribute="bottom" constant="15" id="5gY-ty-p8F"/>
+                                    <constraint firstItem="brf-P0-4Wz" firstAttribute="leading" secondItem="aB8-V3-6Rr" secondAttribute="trailing" constant="15" id="7HE-Sa-hsE"/>
+                                    <constraint firstItem="XfK-YR-f9B" firstAttribute="width" secondItem="0u8-f8-2gc" secondAttribute="width" id="9AY-Od-cS7"/>
+                                    <constraint firstItem="Umy-VI-LzQ" firstAttribute="width" secondItem="lFG-dY-2Vv" secondAttribute="width" id="9uE-o9-LGx"/>
+                                    <constraint firstItem="Umy-VI-LzQ" firstAttribute="height" secondItem="0u8-f8-2gc" secondAttribute="height" id="AQw-6Q-pPL"/>
+                                    <constraint firstItem="brf-P0-4Wz" firstAttribute="top" secondItem="Umy-VI-LzQ" secondAttribute="bottom" constant="15" id="ELW-IU-d8d"/>
+                                    <constraint firstAttribute="trailing" secondItem="XfK-YR-f9B" secondAttribute="trailing" constant="15" id="HuF-NJ-1fS"/>
+                                    <constraint firstItem="Umy-VI-LzQ" firstAttribute="leading" secondItem="lFG-dY-2Vv" secondAttribute="trailing" constant="15" id="ISE-5S-CPD"/>
+                                    <constraint firstItem="XfK-YR-f9B" firstAttribute="top" secondItem="kIM-in-p3t" secondAttribute="top" constant="15" id="LnJ-BB-rFv"/>
+                                    <constraint firstItem="XfK-YR-f9B" firstAttribute="leading" secondItem="0u8-f8-2gc" secondAttribute="trailing" constant="15" id="NuE-g3-Umi"/>
+                                    <constraint firstItem="aB8-V3-6Rr" firstAttribute="height" secondItem="0u8-f8-2gc" secondAttribute="height" id="RbD-ys-OWI"/>
+                                    <constraint firstItem="0u8-f8-2gc" firstAttribute="top" relation="lessThanOrEqual" secondItem="kIM-in-p3t" secondAttribute="top" constant="15" id="Ume-Y6-VZC"/>
+                                    <constraint firstItem="Umy-VI-LzQ" firstAttribute="top" secondItem="XfK-YR-f9B" secondAttribute="bottom" constant="15" id="WuH-Zn-MW5"/>
+                                    <constraint firstItem="aB8-V3-6Rr" firstAttribute="top" secondItem="lFG-dY-2Vv" secondAttribute="bottom" constant="15" id="YwY-wm-kFN"/>
+                                    <constraint firstItem="aB8-V3-6Rr" firstAttribute="leading" secondItem="kIM-in-p3t" secondAttribute="leading" constant="15" id="ZeL-Ee-jpc"/>
+                                    <constraint firstItem="lFG-dY-2Vv" firstAttribute="height" secondItem="0u8-f8-2gc" secondAttribute="height" id="ZuM-9i-Eht"/>
+                                    <constraint firstItem="0u8-f8-2gc" firstAttribute="leading" secondItem="kIM-in-p3t" secondAttribute="leading" constant="15" id="ade-B6-6v9"/>
+                                    <constraint firstItem="brf-P0-4Wz" firstAttribute="height" secondItem="0u8-f8-2gc" secondAttribute="height" id="crb-vZ-Ubj"/>
+                                    <constraint firstItem="XfK-YR-f9B" firstAttribute="height" secondItem="0u8-f8-2gc" secondAttribute="height" id="eK9-Fd-BiU"/>
+                                    <constraint firstItem="brf-P0-4Wz" firstAttribute="width" secondItem="aB8-V3-6Rr" secondAttribute="width" id="gLg-sP-qFv"/>
+                                    <constraint firstItem="lFG-dY-2Vv" firstAttribute="top" secondItem="0u8-f8-2gc" secondAttribute="bottom" constant="15" id="gNh-Om-fNO"/>
+                                    <constraint firstAttribute="bottom" secondItem="brf-P0-4Wz" secondAttribute="bottom" constant="15" id="pDg-mi-8O5"/>
+                                    <constraint firstAttribute="trailing" secondItem="brf-P0-4Wz" secondAttribute="trailing" constant="15" id="q3n-D0-Fxx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Umy-VI-LzQ" secondAttribute="trailing" constant="15" id="xyM-vK-RbY"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="50"/>
+                                        <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="zih-oZ-Otr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8KZ-rf-wdA"/>
-                            <constraint firstAttribute="trailing" secondItem="kIM-in-p3t" secondAttribute="trailing" id="9X6-C8-RhU"/>
-                            <constraint firstItem="kIM-in-p3t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T4S-Cg-K9n"/>
-                            <constraint firstItem="zih-oZ-Otr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZvB-z3-Bpi"/>
+                            <constraint firstItem="kIM-in-p3t" firstAttribute="top" secondItem="zih-oZ-Otr" secondAttribute="bottom" constant="15" id="8aS-5Q-tHm"/>
+                            <constraint firstAttribute="trailing" secondItem="kIM-in-p3t" secondAttribute="trailing" constant="10" id="9X6-C8-RhU"/>
+                            <constraint firstItem="kIM-in-p3t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="T4S-Cg-K9n"/>
+                            <constraint firstItem="zih-oZ-Otr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="ZvB-z3-Bpi"/>
                             <constraint firstItem="kIM-in-p3t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dS1-H1-GG0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kIM-in-p3t" secondAttribute="bottom" id="h2U-zk-eo0"/>
-                            <constraint firstItem="zih-oZ-Otr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kWs-bz-3K2"/>
-                            <constraint firstItem="zih-oZ-Otr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="mqN-aM-BKS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kIM-in-p3t" secondAttribute="bottom" constant="10" id="h2U-zk-eo0"/>
+                            <constraint firstItem="zih-oZ-Otr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kWs-bz-3K2"/>
+                            <constraint firstItem="zih-oZ-Otr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="mqN-aM-BKS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -428,10 +443,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="130.40000000000001" y="135.96059113300493"/>
+            <point key="canvasLocation" x="127.53623188405798" y="134.59821428571428"/>
         </scene>
     </scenes>
     <resources>
         <image name="fish" width="500" height="380"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.67450980392156867" green="0.7803921568627451" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
