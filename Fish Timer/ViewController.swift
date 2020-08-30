@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var promptLabel: UILabel!
     
+    let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .light)
+    let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
+    
     var currentTime = 0 //use to display timers current time (display)
     var cycleCount = 0  //use to track total time timers run
     var selectedStages = (0,0,0,0)
@@ -34,6 +37,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        impactFeedbackgenerator.prepare()
+        notificationFeedbackGenerator.prepare()
+
         
         //Set Labels
         statusLabel.text = "Select a Food Type"
@@ -72,11 +79,11 @@ class ViewController: UIViewController {
     @objc func tickTimer() {
         cycleCount += 1
         currentTime -= 1
-         //updates timer
-//        print(currentTime)
+        
+        //updates timer
         if ((selectedStages.0 == selectedStages.1) && cycleCount == 1){ //Special case for fruits
+            notificationFeedbackGenerator.notificationOccurred(.warning)
             statusLabel.text = "You can't cook fruit! \n Time until burnt:"
-//            currentTime = selectedStages.2 - selectedStages.1
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
             timerLabel.text = String(format: "%01d:%02d", m, s)
             timerLabel.textColor = UIColor.orange
@@ -85,18 +92,21 @@ class ViewController: UIViewController {
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
             timerLabel.text = String(format: "%01d:%02d", m, s)
         } else if (cycleCount == selectedStages.1) { //cooked
+            notificationFeedbackGenerator.notificationOccurred(.success)
             statusLabel.text = "Done cooking! \n Time until burnt:"
             currentTime = selectedStages.2 - selectedStages.1
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
             timerLabel.text = String(format: "%01d:%02d", m, s)
             timerLabel.textColor = UIColor.orange
         } else if (cycleCount == selectedStages.2) {
+            notificationFeedbackGenerator.notificationOccurred(.warning)
             statusLabel.text = "Burnt! \n Time until fire:"
             currentTime = selectedStages.3 - selectedStages.2
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
             timerLabel.text = String(format: "%01d:%02d", m, s)
             timerLabel.textColor = UIColor.red
         } else if (cycleCount == selectedStages.3) {
+            notificationFeedbackGenerator.notificationOccurred(.error)
             statusLabel.text = "A fire has started!"
             timerLabel.text = ""
             cancelButton.isHidden = true
@@ -126,11 +136,13 @@ class ViewController: UIViewController {
         let name = button.label.text ?? "Error" //Get name of food
                 
         if sender.state == .began {
-           UIView.animate(withDuration: 0.1, animations: {
-               view?.transform = CGAffineTransform(scaleX: 0.95, y: 0.93)
-           })
+            impactFeedbackgenerator.impactOccurred()
+            UIView.animate(withDuration: 0.1, animations: {
+                view?.transform = CGAffineTransform(scaleX: 0.95, y: 0.93)
+            })
         }
         if sender.state == .ended {
+            impactFeedbackgenerator.impactOccurred()
              UIView.animate(withDuration: 0.1, animations: {
                 view?.transform = CGAffineTransform.identity
              })

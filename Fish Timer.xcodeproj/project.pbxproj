@@ -30,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AE551DF924EC9EC6006EA151 /* Fish Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fish Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE551DF924EC9EC6006EA151 /* SoT Cooking Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoT Cooking Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE551DFC24EC9EC6006EA151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE551DFE24EC9EC6006EA151 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AE551E0024EC9EC6006EA151 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		AE551DFA24EC9EC6006EA151 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE551DF924EC9EC6006EA151 /* Fish Timer.app */,
+				AE551DF924EC9EC6006EA151 /* SoT Cooking Timer.app */,
 				AE551E1224EC9ECB006EA151 /* Fish TimerUITests.xctest */,
 			);
 			name = Products;
@@ -125,7 +125,7 @@
 			);
 			name = "Fish Timer";
 			productName = "Fish Timer";
-			productReference = AE551DF924EC9EC6006EA151 /* Fish Timer.app */;
+			productReference = AE551DF924EC9EC6006EA151 /* SoT Cooking Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AE551E1124EC9ECB006EA151 /* Fish TimerUITests */ = {
@@ -382,9 +382,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "personal.test.ios.Fish-Timer";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SoT Cooking Timer";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -401,9 +401,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "personal.test.ios.Fish-Timer";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SoT Cooking Timer";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

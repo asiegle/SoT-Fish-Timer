@@ -3,7 +3,6 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,37 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sea of Thieves" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-cp-PO9">
-                                <rect key="frame" x="30" y="208" width="315" height="80"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fishTrophy" translatesAutoresizingMaskIntoConstraints="NO" id="DqE-d5-E7M">
-                                <rect key="frame" x="50" y="296" width="275" height="220"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fishTransparentShadow" translatesAutoresizingMaskIntoConstraints="NO" id="DqE-d5-E7M">
+                                <rect key="frame" x="80" y="320" width="215" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DqE-d5-E7M" secondAttribute="height" multiplier="5:4" id="Ovi-fb-yFI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooking Timer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8W0-o2-y32">
-                                <rect key="frame" x="53" y="524" width="269" height="160"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="backgroundColor" red="0.36572570714319697" green="0.59861981152513299" blue="0.85385400462279804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8W0-o2-y32" secondAttribute="trailing" constant="53" id="2Gw-kv-FWX"/>
                             <constraint firstItem="DqE-d5-E7M" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BMm-pg-8u6"/>
                             <constraint firstItem="DqE-d5-E7M" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MTe-Yk-ZcF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DqE-d5-E7M" secondAttribute="trailing" constant="50" id="PKo-gG-Pe1"/>
-                            <constraint firstItem="DqE-d5-E7M" firstAttribute="top" secondItem="LpD-cp-PO9" secondAttribute="bottom" constant="8" id="ZjP-y2-EpI"/>
-                            <constraint firstItem="DqE-d5-E7M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="cez-MW-4KL"/>
-                            <constraint firstItem="LpD-cp-PO9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="dBF-8K-NmY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LpD-cp-PO9" secondAttribute="trailing" constant="30" id="tLI-sm-bCI"/>
-                            <constraint firstItem="8W0-o2-y32" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="veJ-N6-alb"/>
-                            <constraint firstItem="8W0-o2-y32" firstAttribute="top" secondItem="DqE-d5-E7M" secondAttribute="bottom" constant="8" id="yiK-ga-w0j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DqE-d5-E7M" secondAttribute="trailing" constant="80" id="PKo-gG-Pe1"/>
+                            <constraint firstItem="DqE-d5-E7M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="cez-MW-4KL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -57,9 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fishTrophy" width="500" height="380"/>
-        <namedColor name="BackgroundColor">
-            <color red="0.67450980392156867" green="0.7803921568627451" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="fishTransparentShadow" width="500" height="500"/>
     </resources>
 </document>
