@@ -24,7 +24,9 @@ class ViewController: UIViewController {
     
     var currentTime = 0 //use to display timers current time (display)
     var cycleCount = 0  //use to track total time timers run
+    var timerStartTime: Date!
     var selectedStages = (0,0,0,0)
+    var currentStage = 0
     var timer = Timer()
     
     let foodTimes = ["Fish"  :[30,40,80, 380],
@@ -85,60 +87,48 @@ class ViewController: UIViewController {
     
     //Called every second for timer
     @objc func tickTimer() {
-        cycleCount += 1
-        currentTime -= 1
+        //keeps track of current time using elapsed time since timer start
+        //this allows the timer to "run in the background" and keep accurate time when reopened
+        let elapsed = Date().timeIntervalSince(timerStartTime)
+        cycleCount = Int(elapsed)
         
-
         
-        //updates timer
+        //Keeps track of current stage, updating status label and providing vibration feedback as needed
         if ((selectedStages.0 == selectedStages.1) && cycleCount == 1){ //Special case for fruits
-//            notificationFeedbackGenerator.notificationOccurred(.warning)
 //            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "You can't cook fruit! \n Time until burnt:"
-            let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
-            timerLabel.text = String(format: "%01d:%02d", m, s)
             timerLabel.textColor = UIColor.orange
-        } else if (cycleCount == selectedStages.0){ //undercooked
+            currentStage = 2
+            
+        } else if ((cycleCount >= selectedStages.0) && (currentStage == 0)){ //undercooked
             //reserved
-            let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
-            timerLabel.text = String(format: "%01d:%02d", m, s)
-        } else if (cycleCount == selectedStages.1) { //cooked
-//            notificationFeedbackGenerator.notificationOccurred(.success)
+            currentStage = 1
+            
+        } else if ((cycleCount >= selectedStages.1)  && (currentStage == 1)) { //cooked
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "Done cooking! \n Time until burnt:"
-            currentTime = selectedStages.2 - selectedStages.1
-            let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
-            timerLabel.text = String(format: "%01d:%02d", m, s)
+            currentTime = selectedStages.2
             timerLabel.textColor = UIColor.orange
-        } else if (cycleCount == selectedStages.2) {
-//            notificationFeedbackGenerator.notificationOccurred(.warning)
+            currentStage = 2
+            
+        } else if ((cycleCount >= selectedStages.2)  && (currentStage == 2)) {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "Burnt! \n Time until fire:"
-            currentTime = selectedStages.3 - selectedStages.2
-            let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
-            timerLabel.text = String(format: "%01d:%02d", m, s)
+            currentTime = selectedStages.3
             timerLabel.textColor = UIColor.red
-        } else if (cycleCount == selectedStages.3) {
-//            notificationFeedbackGenerator.notificationOccurred(.error)
+            currentStage = 3
+            
+        } else if (cycleCount >= selectedStages.3) {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "A fire has started!"
             timerLabel.text = ""
             cancelButton.isHidden = true
             timer.invalidate()
-        } else {
-            let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
-            timerLabel.text = String(format: "%01d:%02d", m, s)
         }
         
-        
-                
-//        if (currentTime <= 0) {
-//            timerLabel.text = "Done!"
-//            statusLabel.text = "Done cooking! \n Time until burnt:"
-//            cancelButton.isHidden = true
-// //            currentFoodImage.image = nil
-// //            timer.invalidate()
-//        }
+        //Updates timer
+        let (m, s) = secondsToMinutesSeconds(seconds: currentTime - cycleCount) //converts time
+        timerLabel.text = String(format: "%01d:%02d", m, s)
     }
 
 
@@ -170,10 +160,12 @@ class ViewController: UIViewController {
             statusLabel.isHidden = false
             timerLabel.isHidden = false
             promptLabel.isHidden = true
+            timerStartTime = Date()
             cycleCount = 0
            
             //Create tuple of all stages for current food
             selectedStages = (foodTimes[name]?[0] ?? 0, foodTimes[name]?[1] ?? 0, foodTimes[name]?[2] ?? 0, foodTimes[name]?[3] ?? 0)
+            currentStage = 0
             
             //create notifcations
             createNotifications(name: name, stages: selectedStages)
