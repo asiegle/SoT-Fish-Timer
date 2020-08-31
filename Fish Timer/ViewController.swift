@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var promptLabel: UILabel!
     
     let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .light)
-    let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
+//    let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
     
     var currentTime = 0 //use to display timers current time (display)
     var cycleCount = 0  //use to track total time timers run
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         impactFeedbackgenerator.prepare()
-        notificationFeedbackGenerator.prepare()
+//        notificationFeedbackGenerator.prepare()
         
         //Set Labels
         statusLabel.text = "Select a Food Type"
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         FoodButtons[5].label.text = "Fruit"
         FoodButtons[5].image.image = UIImage(named: "fish.png")
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { success, error in
             if success {
                 print("Notifications Accepted")
             } else if let error = error {
@@ -127,7 +127,8 @@ class ViewController: UIViewController {
         }
         
         //Updates timer
-        let (m, s) = secondsToMinutesSeconds(seconds: currentTime - cycleCount) //converts time
+        var (m, s) = secondsToMinutesSeconds(seconds: currentTime - cycleCount) //converts time
+        if (s < 0){ s = 0 } //purely cosmetic, just to avoid ugly timer numbers in some edge cases
         timerLabel.text = String(format: "%01d:%02d", m, s)
     }
 
@@ -142,12 +143,13 @@ class ViewController: UIViewController {
         let name = button.label.text ?? "Error" //Get name of food
                 
         if sender.state == .began {
-//            impactFeedbackgenerator.impactOccurred()
+            //begin animation
             UIView.animate(withDuration: 0.1, animations: {
                 view?.transform = CGAffineTransform(scaleX: 0.95, y: 0.93)
             })
         }
         if sender.state == .ended {
+            //haptic feedback, end animation
             impactFeedbackgenerator.impactOccurred()
              UIView.animate(withDuration: 0.1, animations: {
                 view?.transform = CGAffineTransform.identity
@@ -160,7 +162,7 @@ class ViewController: UIViewController {
             statusLabel.isHidden = false
             timerLabel.isHidden = false
             promptLabel.isHidden = true
-            timerStartTime = Date()
+            timerStartTime = Date() //get current time at timer start, used to track current time
             cycleCount = 0
            
             //Create tuple of all stages for current food
@@ -212,25 +214,23 @@ class ViewController: UIViewController {
 
         if(stages.0 != stages.1){
             content.title = "Done Cooking!"
-            content.subtitle = "Your \(name) is done cooking"
+            content.body = "Your \(name) is done cooking"
             trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(stages.1), repeats: false)
             request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request)
         }
 //        let content = UNMutableNotificationContent()
         content.title = "Burnt!"
-        content.subtitle = "Oh no, your \(name) has burned"
+        content.body = "Oh no, your \(name) has burned"
         trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(stages.2), repeats: false)
         request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
         
         content.title = "Fire!"
-        content.subtitle = "Watch out, your \(name) has caught fire"
+        content.body = "Watch out, your \(name) has caught fire"
         trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(stages.3), repeats: false)
         request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
-        
-        
         
     }
     
