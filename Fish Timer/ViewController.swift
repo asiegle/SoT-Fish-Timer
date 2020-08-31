@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -40,7 +41,6 @@ class ViewController: UIViewController {
         
         impactFeedbackgenerator.prepare()
         notificationFeedbackGenerator.prepare()
-
         
         //Set Labels
         statusLabel.text = "Select a Food Type"
@@ -67,6 +67,14 @@ class ViewController: UIViewController {
         
         FoodButtons[5].label.text = "Fruit"
         FoodButtons[5].image.image = UIImage(named: "fish.png")
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("Notifications Accepted")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     //convers seconds to minutes+seconds
@@ -80,9 +88,12 @@ class ViewController: UIViewController {
         cycleCount += 1
         currentTime -= 1
         
+
+        
         //updates timer
         if ((selectedStages.0 == selectedStages.1) && cycleCount == 1){ //Special case for fruits
-            notificationFeedbackGenerator.notificationOccurred(.warning)
+//            notificationFeedbackGenerator.notificationOccurred(.warning)
+//            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "You can't cook fruit! \n Time until burnt:"
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
             timerLabel.text = String(format: "%01d:%02d", m, s)
@@ -92,21 +103,24 @@ class ViewController: UIViewController {
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
             timerLabel.text = String(format: "%01d:%02d", m, s)
         } else if (cycleCount == selectedStages.1) { //cooked
-            notificationFeedbackGenerator.notificationOccurred(.success)
+//            notificationFeedbackGenerator.notificationOccurred(.success)
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "Done cooking! \n Time until burnt:"
             currentTime = selectedStages.2 - selectedStages.1
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
             timerLabel.text = String(format: "%01d:%02d", m, s)
             timerLabel.textColor = UIColor.orange
         } else if (cycleCount == selectedStages.2) {
-            notificationFeedbackGenerator.notificationOccurred(.warning)
+//            notificationFeedbackGenerator.notificationOccurred(.warning)
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "Burnt! \n Time until fire:"
             currentTime = selectedStages.3 - selectedStages.2
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime) //converts time
             timerLabel.text = String(format: "%01d:%02d", m, s)
             timerLabel.textColor = UIColor.red
         } else if (cycleCount == selectedStages.3) {
-            notificationFeedbackGenerator.notificationOccurred(.error)
+//            notificationFeedbackGenerator.notificationOccurred(.error)
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "A fire has started!"
             timerLabel.text = ""
             cancelButton.isHidden = true
@@ -130,13 +144,15 @@ class ViewController: UIViewController {
 
     //each stack has it's own Tap recognizer, but they share an action
     @IBAction func onPress(_ sender: UILongPressGestureRecognizer) {
+        //clear any previous notifications
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
  
         let view = sender.view
         let button = (view?.subviews[0])! as! FoodButton //get stackView from UIView
         let name = button.label.text ?? "Error" //Get name of food
                 
         if sender.state == .began {
-            impactFeedbackgenerator.impactOccurred()
+//            impactFeedbackgenerator.impactOccurred()
             UIView.animate(withDuration: 0.1, animations: {
                 view?.transform = CGAffineTransform(scaleX: 0.95, y: 0.93)
             })
@@ -159,6 +175,9 @@ class ViewController: UIViewController {
             //Create tuple of all stages for current food
             selectedStages = (foodTimes[name]?[0] ?? 0, foodTimes[name]?[1] ?? 0, foodTimes[name]?[2] ?? 0, foodTimes[name]?[3] ?? 0)
             
+            //create notifcations
+            createNotifications(name: name, stages: selectedStages)
+            
             //Special case for fruit, which go straight to burning
             if (selectedStages.1 != 0) {
                 statusLabel.text = "Cooking..." //Set status text
@@ -179,6 +198,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests() //clear any previous notifications
         timer.invalidate()
         statusLabel.text = "Select a Food Type"
         timerLabel.textColor = UIColor.label
@@ -188,6 +208,38 @@ class ViewController: UIViewController {
         promptLabel.isHidden = false
         currentFoodImage.image = nil
         cancelButton.isHidden = true
+    }
+    
+    
+    func createNotifications(name: String, stages: (Int,Int,Int,Int)){
+        
+        var trigger: UNTimeIntervalNotificationTrigger
+        var request: UNNotificationRequest
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default
+
+        if(stages.0 != stages.1){
+            content.title = "Done Cooking!"
+            content.subtitle = "Your \(name) is done cooking"
+            trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(stages.1), repeats: false)
+            request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request)
+        }
+//        let content = UNMutableNotificationContent()
+        content.title = "Burnt!"
+        content.subtitle = "Oh no, your \(name) has burned"
+        trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(stages.2), repeats: false)
+        request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
+        
+        content.title = "Fire!"
+        content.subtitle = "Watch out, your \(name) has caught fire"
+        trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(stages.3), repeats: false)
+        request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
+        
+        
+        
     }
     
     
