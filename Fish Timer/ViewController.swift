@@ -68,6 +68,7 @@ class ViewController: UIViewController {
         FoodButtons[4].raw = UIImage(named: "meat_raw.png")
         FoodButtons[4].under = UIImage(named: "meat_under.png")
         FoodButtons[4].cooked = UIImage(named: "meat_cooked.png")
+        FoodButtons[4].burnt = UIImage(named: "meat_burnt.png")
         FoodButtons[4].image.image = FoodButtons[4].raw
         
         FoodButtons[5].label.text = "Fruit"
@@ -133,6 +134,11 @@ class ViewController: UIViewController {
             currentTime = selectedStages.3
             timerLabel.textColor = UIColor.red
             currentStage = 3
+            
+            let toImage = button?.burnt
+            UIView.transition(with: currentFoodImage, duration: 2.0, options: .transitionCrossDissolve, animations: {
+                                self.currentFoodImage.image = toImage
+                              }, completion: nil)
             
         } else if (cycleCount >= selectedStages.3) {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
