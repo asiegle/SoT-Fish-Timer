@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     let foodTimes = ["Fish"  :[30,40,80, 380],
                      "Trophy Fish":[80,90,180, 480],
-                     "Meat"  :[50,60,120, 420],
+                     "Meat"  :[50,60,120, 420], //50,60,120,420
                      "Megaladon"   :[100,120,240, 540],
                      "Kraken":[100,120,240, 540],
                      "Fruit" :[0,0,15, 315],
@@ -65,7 +65,10 @@ class ViewController: UIViewController {
         FoodButtons[3].image.image = UIImage(named: "fish.png")
         
         FoodButtons[4].label.text = "Meat"
-        FoodButtons[4].image.image = UIImage(named: "fish.png")
+        FoodButtons[4].raw = UIImage(named: "meat_raw.png")
+        FoodButtons[4].under = UIImage(named: "meat_under.png")
+        FoodButtons[4].cooked = UIImage(named: "meat_cooked.png")
+        FoodButtons[4].image.image = FoodButtons[4].raw
         
         FoodButtons[5].label.text = "Fruit"
         FoodButtons[5].image.image = UIImage(named: "fish.png")
@@ -91,6 +94,8 @@ class ViewController: UIViewController {
         //this allows the timer to "run in the background" and keep accurate time when reopened
         let elapsed = Date().timeIntervalSince(timerStartTime)
         cycleCount = Int(elapsed)
+        let button = timer.userInfo as! FoodButton?
+
         
         
         //Keeps track of current stage, updating status label and providing vibration feedback as needed
@@ -104,12 +109,23 @@ class ViewController: UIViewController {
             //reserved
             currentStage = 1
             
+            let toImage = button?.under
+            UIView.transition(with: currentFoodImage, duration: 2.0, options: .transitionCrossDissolve, animations: {
+                                self.currentFoodImage.image = toImage
+                              }, completion: nil)
+            
+            
         } else if ((cycleCount >= selectedStages.1)  && (currentStage == 1)) { //cooked
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "Done cooking! \n Time until burnt:"
             currentTime = selectedStages.2
             timerLabel.textColor = UIColor.orange
             currentStage = 2
+            
+            let toImage = button?.cooked
+            UIView.transition(with: currentFoodImage, duration: 2.0, options: .transitionCrossDissolve, animations: {
+                                self.currentFoodImage.image = toImage
+                              }, completion: nil)
             
         } else if ((cycleCount >= selectedStages.2)  && (currentStage == 2)) {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
@@ -141,19 +157,27 @@ class ViewController: UIViewController {
         let view = sender.view
         let button = (view?.subviews[0])! as! FoodButton //get stackView from UIView
         let name = button.label.text ?? "Error" //Get name of food
+        
+//        let currentColor = UIColor.copy(view?.backgroundColor ?? UIColor.gray)
+//        print(view?.backgroundColor.self)
                 
         if sender.state == .began {
             //begin animation
             UIView.animate(withDuration: 0.1, animations: {
+                view?.backgroundColor = UIColor.init(named: "BackgroundColor")
                 view?.transform = CGAffineTransform(scaleX: 0.95, y: 0.93)
             })
+            
         }
         if sender.state == .ended {
             //haptic feedback, end animation
             impactFeedbackgenerator.impactOccurred()
              UIView.animate(withDuration: 0.1, animations: {
                 view?.transform = CGAffineTransform.identity
+                view?.backgroundColor = UIColor.separator
              })
+           
+            
         
             timer.invalidate() //end any timers that may have been running
             timerLabel.textColor = UIColor.label //Reset label color
@@ -182,7 +206,7 @@ class ViewController: UIViewController {
                 currentTime = selectedStages.2
             }
             
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tickTimer), userInfo: button, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tickTimer), userInfo:button, repeats: true)
             let (m, s) = secondsToMinutesSeconds(seconds: currentTime)
             timerLabel.text = String(format: "%01d:%02d", m, s) //update time to start time
 
