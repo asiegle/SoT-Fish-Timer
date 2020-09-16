@@ -51,9 +51,15 @@ class ViewController: UIViewController {
         promptLabel.isHidden = false
         cancelButton.isHidden = true
         
+        currentFoodImage.layer.shadowOpacity = 1
+        currentFoodImage.layer.shadowOffset = .zero
+        currentFoodImage.layer.masksToBounds = false
+
+        currentFoodImage.layer.shadowColor = UIColor.black.cgColor
+        currentFoodImage.layer.shadowRadius = 2
+        
         //Populate Buttons
-        FoodButtons[0].label.text = "Fish"
-        FoodButtons[0].image.image = UIImage(named: "fish.png")
+        FoodButtons[0].FoodButton(food: "Fish", raw: "fish_raw.png", under: "fish_under.png", cooked: "fish_cooked.png", burnt: "fish_burnt.png")
         
         FoodButtons[1].label.text = "Trophy Fish"
         FoodButtons[1].image.image = UIImage(named: "fishTrophy.png")
@@ -64,15 +70,8 @@ class ViewController: UIViewController {
         FoodButtons[3].label.text = "Kraken"
         FoodButtons[3].image.image = UIImage(named: "fish.png")
         
-        FoodButtons[4].label.text = "Meat"
-        FoodButtons[4].raw = UIImage(named: "meat_raw.png")
-        FoodButtons[4].under = UIImage(named: "meat_under.png")
-        FoodButtons[4].cooked = UIImage(named: "meat_cooked.png")
-        FoodButtons[4].burnt = UIImage(named: "meat_burnt.png")
-        FoodButtons[4].image.image = FoodButtons[4].raw
-        
-        FoodButtons[5].label.text = "Fruit"
-        FoodButtons[5].image.image = UIImage(named: "fish.png")
+        FoodButtons[4].FoodButton(food: "Meat", raw: "meat_raw.png", under: "meat_under.png", cooked: "meat_cooked.png", burnt: "meat_burnt.png")
+        FoodButtons[5].FoodButton(food: "Fruit", raw: "fruit_raw.png", under: "fruit_raw.png", cooked: "fruit_raw.png", burnt: "fruit_burnt.png")
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { success, error in
             if success {
@@ -107,14 +106,12 @@ class ViewController: UIViewController {
             currentStage = 2
             
         } else if ((cycleCount >= selectedStages.0) && (currentStage == 0)){ //undercooked
-            //reserved
             currentStage = 1
-            
+            //transitions to next stages image
             let toImage = button?.under
             UIView.transition(with: currentFoodImage, duration: 2.0, options: .transitionCrossDissolve, animations: {
                                 self.currentFoodImage.image = toImage
                               }, completion: nil)
-            
             
         } else if ((cycleCount >= selectedStages.1)  && (currentStage == 1)) { //cooked
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
@@ -144,6 +141,8 @@ class ViewController: UIViewController {
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             statusLabel.text = "A fire has started!"
             timerLabel.text = ""
+            currentFoodImage.layer.shadowColor = UIColor.red.cgColor
+            currentFoodImage.layer.shadowRadius = 15
             cancelButton.isHidden = true
             timer.invalidate()
         }
@@ -194,6 +193,9 @@ class ViewController: UIViewController {
             promptLabel.isHidden = true
             timerStartTime = Date() //get current time at timer start, used to track current time
             cycleCount = 0
+            
+            currentFoodImage.layer.shadowColor = UIColor.black.cgColor
+            currentFoodImage.layer.shadowRadius = 2
            
             //Create tuple of all stages for current food
             selectedStages = (foodTimes[name]?[0] ?? 0, foodTimes[name]?[1] ?? 0, foodTimes[name]?[2] ?? 0, foodTimes[name]?[3] ?? 0)
